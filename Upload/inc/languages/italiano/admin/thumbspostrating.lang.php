@@ -30,7 +30,7 @@
 
 $l['tpr_info_name'] = 'Thumbs Post Rating';
 
-$l['tpr_info_desc'] = 'Aggiungi un sistema di valutazione pollice su / pollice giù su ogni singolo post.';
+$l['tpr_info_desc'] = 'Aggiungi un sistema di valutazione pollice su / pollice giu su ogni singolo post.';
 
 //
 
@@ -54,18 +54,18 @@ $l['tpr_set_forums_desc'] = 'Forum da escludere per avere la funzione di valutaz
 
 $l['tpr_set_selfrate_title'] = 'Disabilita l autovalutazione';
 
-$l['tpr_set_selfrate_desc'] = 'Disabilitando l autovalutazione, l utente non può valutare il proprio post.';
+$l['tpr_set_selfrate_desc'] = 'Disabilitando l autovalutazione, l utente non puo valutare il proprio post.';
 
 //
 
 $l['tpr_set_undorate_title'] = 'Abilita annullamento della valutazione';
 
-$l['tpr_set_undorate_desc'] = 'Se abilitato, l utente può rimuovere (e modificare) il proprio voto dopo aver valutato un post.';
+$l['tpr_set_undorate_desc'] = 'Se abilitato, l utente puo rimuovere (e modificare) il proprio voto dopo aver valutato un post.';
 
 //
 
 $l['tpr_set_closerate_title'] = 'Abilita valutazione a thread chiuso';
 
-$l['tpr_set_closerate_desc'] = 'Se abilitato, l utente può valutare i post in un thread chiuso.';
+$l['tpr_set_closerate_desc'] = 'Se abilitato, l utente puo valutare i post in un thread chiuso.';
 
 ?>
