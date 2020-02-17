@@ -25,7 +25,20 @@ License                                                 : GNU/GPL
  
 Author                                  : Vintagedaddyo
 Author contact                  : [Email] or [PM] me via MyBB Community Forum
+
+
+Plugin Version                                   : 1.5
+Released date                                   : Feb 16, 2020
+Supported MyBB version             : 1.8
+License                                                 : GNU/GPL
  
+@ MyBB Mod site            : https://community.mybb.com/mods.php?acti...w&pid=1297
+@ MyBB Community      : http://community.mybb.com/thread-84250.html
+ 
+Author                                  : Vintagedaddyo
+Author contact                  : [Email] or [PM] me via MyBB Community Forum
+
+
 Current localization:
 
 - english
@@ -90,7 +103,12 @@ Template changes           : Modified 2 templates
 SQL queries                        : One per page on showthread.php
  
 Change Log
- 
+1.5 – 02/16/2020
+- due to a user request, minor changes as follows: 
+- primary stylesheet removal 
+- theme attached stylesheet addition 
+- font awesome usage instructions
+
 1.4 – 08/12/2019
 - minor changes for usage with MyBB 1.8 and also php 7.x
  
@@ -124,3 +142,139 @@ Change Log
  
 1.0 - 12/15/2010
 - Initial release
+
+
+Further Instructions for FA usage:
+
+So you want to use this plugin but your theme uses font awesome and you would like to have the post thumbs also fontawesome icons?
+
+ok, well first, find out if your theme uses font awesome 4 or 5 and then.....
+
+Font Awesome 4:
+
+Replace thumbpostrating.css with:
+
+.tpr_box {
+    border: 1px solid #9a9a9a;
+    background-color: #ffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.tu_stat {
+    color: #080;
+    font-size: small;
+}
+
+.td_stat {
+    color: #ff0000;
+    font-size: small;
+}
+
+.small {
+    font-size: xx-small;
+}
+
+.tpr_thumb {
+    display: block;
+    width: 15px;
+    height: 16px;
+    font-size: 14px;
+    font-family: "FontAwesome";
+}
+
+.tu1:before,
+.tu2:hover {
+    content: "\f164";
+    color: #080;
+    text-decoration: none;
+}
+
+.td0:before,
+.td2:before {
+    content: "\f165";
+    color: #ecbcb4;
+    text-decoration: none;
+}
+
+.tu0:before,
+.tu2:before {
+    content: "\f164";
+    color: #ecbcb4;
+    text-decoration: none;
+}
+
+.td1:before,
+.td2:hover {
+    content: "\f165";
+    color: #ff0000;
+    text-decoration: none;
+}
+
+
+
+
+Font Awesome 5:
+
+Replace thumbpostrating.css with:
+
+.tpr_box {
+    border: 1px solid #9a9a9a;
+    background-color: #ffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.tu_stat {
+    color: #080;
+    font-size: small;
+}
+
+.td_stat {
+    color: #ff0000;
+    font-size: small;
+}
+
+.small {
+    font-size: xx-small;
+}
+
+.tpr_thumb {
+    display: block;
+    width: 15px;
+    height: 16px;
+    font-size: 14px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.tu1:before,
+.tu2:hover {
+    content: "\f164";
+    color: #080;
+    text-decoration: none;
+}
+
+.td0:before,
+.td2:before {
+    content: "\f165";
+    color: #ecbcb4;
+    text-decoration: none;
+}
+
+.tu0:before,
+.tu2:before {
+    content: "\f164";
+    color: #ecbcb4;
+    text-decoration: none;
+}
+
+.td1:before,
+.td2:hover {
+    content: "\f165";
+    color: #ff0000;
+    text-decoration: none;
+}
+
