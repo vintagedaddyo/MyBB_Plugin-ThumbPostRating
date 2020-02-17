@@ -153,7 +153,7 @@ ok, well first, find out if your theme uses font awesome 4 or 5 and then.....
 Font Awesome 4:
 
 Replace thumbpostrating.css with:
-[code]
+
 .tpr_box {
     border: 1px solid #9a9a9a;
     background-color: #ffff;
@@ -211,14 +211,14 @@ Replace thumbpostrating.css with:
     color: #ff0000;
     text-decoration: none;
 }
-[/code]
+
 
 
 
 Font Awesome 5:
 
 Replace thumbpostrating.css with:
-[code]
+
 .tpr_box {
     border: 1px solid #9a9a9a;
     background-color: #ffff;
@@ -277,4 +277,4 @@ Replace thumbpostrating.css with:
     color: #ff0000;
     text-decoration: none;
 }
-[/code]
+
