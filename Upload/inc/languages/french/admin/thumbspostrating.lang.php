@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.4
+ * Plugin Version: 1.5
  *
  *  This file is part of Thumbs Post Rating plugin for MyBB.
  *
@@ -42,7 +42,7 @@ $l['tpr_set_group_1_desc'] = 'Parametres du plugin Thumbs Post Rating.';
 
 $l['tpr_set_usergroups_title'] = 'Groupes d utilisateurs';
 
-$l['tpr_set_usergroups_desc'] = 'Groupes d utilisateurs ayant autorise l evaluation de la publication. (Par defaut: 2,3,4,6) <br /> 0 signifie que tous les groupes d utilisateurs peuvent attribuer une note, a l exception de l invite.';
+$l['tpr_set_usergroups_desc'] = 'Groupes d utilisateurs ayant autorise l evaluation de la publication. (Par defaut: 2,3,4,6) <br /> Les invites ne sont pas autorises.';
 
 //
 

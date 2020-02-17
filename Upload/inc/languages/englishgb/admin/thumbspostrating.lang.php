@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.4
+ * Plugin Version: 1.5
  *
  *  This file is part of Thumbs Post Rating plugin for MyBB.
  *
@@ -42,7 +42,7 @@ $l['tpr_set_group_1_desc'] = 'Settings for the Thumbs Post Rating plugin.';
 
 $l['tpr_set_usergroups_title'] = 'Usergroups';
 
-$l['tpr_set_usergroups_desc'] = 'Usergroups who allowed to rate the post. (Default: 2,3,4,6)<br /> 0 means all usergroups can rate, except guest.';
+$l['tpr_set_usergroups_desc'] = 'Usergroups who allowed to rate the post. (Default: 2,3,4,6)<br /> Guests are not allowed.';
 
 //
 

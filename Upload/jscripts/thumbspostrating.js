@@ -7,7 +7,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.4
+ * Plugin Version: 1.5
  *
  *  This file is part of Thumbs Post Rating plugin for MyBB.
  *

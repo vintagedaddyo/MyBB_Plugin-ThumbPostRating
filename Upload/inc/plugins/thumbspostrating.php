@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.4
+ * Plugin Version: 1.5
  *
  *  This file is part of Thumbs Post Rating plugin for MyBB.
  *
@@ -57,7 +57,7 @@ function thumbspostrating_info()
 		'website' => 'http://community.mybb.com/thread-84250.html',
 		'author' => 'TY Yew & Vintagedaddyo',
 		'authorsite' => 'http://community.mybb.com/user-6029.html',
-		'version' => '1.4',
+		'version' => '1.5',
 		'guid' => '21de27b859c0095ec17f86f561fa3737',
 		'compatibility' => '18*'
 	);
@@ -136,6 +136,80 @@ function thumbspostrating_activate()
 	}
 
 	rebuild_settings();
+	
+    // activate stylesheet
+    
+    $stylesheet = '.tpr_box
+{
+	border: 1px solid #9A9A9A;
+	background-color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;	
+}
+.tu_stat
+{
+	color: #080;
+	font-size: small;
+}
+.td_stat
+{
+	color: red;
+	font-size: small;
+}
+.small
+{
+	font-size:xx-small;
+}
+.tpr_thumb
+{
+	display: block;
+	width: 15px;
+	height: 16px;
+}
+.tu1, .tu2:hover
+{
+	background: url(images/tpr_thumbs.png) no-repeat 0 0;
+	background-position: 0 -16px;
+}
+.td0, .td2
+{
+	background: url(images/tpr_thumbs.png) no-repeat 0 0;
+	background-position: -15px 0;
+}
+.tu0, .tu2
+{
+	background: url(images/tpr_thumbs.png) no-repeat 0 0;
+}
+.td1, .td2:hover {
+	background: url(images/tpr_thumbs.png) no-repeat 0 0;
+	background-position: -15px -16px;
+}';
+    
+    $new_stylesheet = array(
+        'name' => 'thumbpostrating.css',
+        'tid' => 1,
+        'attachedto' => 'showthread.php',
+        'stylesheet' => $stylesheet,
+        'lastmodified' => TIME_NOW
+    );
+    
+    $sid = $db->insert_query('themestylesheets', $new_stylesheet);
+    
+    $db->update_query('themestylesheets', array(
+        'cachefile' => "css.php?stylesheet={$sid}"
+    ), "sid='{$sid}'", 1);
+    
+    $query = $db->simple_select('themes', 'tid');
+    
+    while ($theme = $db->fetch_array($query))
+      {
+        
+        require_once MYBB_ADMIN_DIR . 'inc/functions_themes.php';
+        
+        update_theme_stylesheet_list($theme['tid']);
+        
+      }	
 }
 
 // Deactivate function
@@ -160,6 +234,20 @@ function thumbspostrating_deactivate()
 	find_replace_templatesets('postbit','#'.preg_quote('<div class="float_right">{$post[\'tprdsp\']}</div>').'#','');
 
 	find_replace_templatesets('postbit_classic','#'.preg_quote('<div class="float_right">{$post[\'tprdsp\']}</div>').'#','');
+	
+	
+    // de-activate stylesheet
+    $db->delete_query('themestylesheets', "name='thumbpostrating.css'");
+    
+    $query = $db->simple_select('themes', 'tid');
+    
+    while ($theme = $db->fetch_array($query))
+      {
+        
+        require_once MYBB_ADMIN_DIR . 'inc/functions_themes.php';
+        update_theme_stylesheet_list($theme['tid']);
+        
+      }     	
 		
 }
 
@@ -191,6 +279,20 @@ function thumbspostrating_uninstall()
 	$db->write_query('ALTER TABLE '.TABLE_PREFIX.'posts DROP thumbsup, DROP thumbsdown', true);
 
 	$db->write_query('DROP TABLE IF EXISTS '.TABLE_PREFIX.'thumbspostrating');
+
+    // if not de-activated in de-activate then de-activate  stylesheet in uninstall
+    $db->delete_query('themestylesheets', "name='thumbpostrating.css'");
+    
+    $query = $db->simple_select('themes', 'tid');
+    
+    while ($theme = $db->fetch_array($query))
+      {
+        
+        require_once MYBB_ADMIN_DIR . 'inc/functions_themes.php';
+        update_theme_stylesheet_list($theme['tid']);
+        
+      }     		
+	
 }
 
 // Function - Load TPR template and style only in showthread.php
@@ -322,9 +424,9 @@ function tpr_box(&$post)
 		return;
 	}
 
-	// Stick in JS and CSS
+	// Stick in JS
 	
-	$GLOBALS['headerinclude'] .= '<script type="text/javascript" src="'.$mybb->settings['bburl'].'/jscripts/thumbspostrating.js?ver=1800"></script><link type="text/css" rel="stylesheet" href="'.$mybb->settings['bburl'].'/css/thumbspostrating.css" />';
+	$GLOBALS['headerinclude'] .= '<script type="text/javascript" src="'.$mybb->settings['bburl'].'/jscripts/thumbspostrating.js?ver=1800"></script>';
 
 	// Build user rating cache
 	

@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.4
+ * Plugin Version: 1.5
  *
  *  This file is part of Thumbs Post Rating plugin for MyBB.
  *
@@ -42,7 +42,7 @@ $l['tpr_set_group_1_desc'] = 'Impostazioni per il plug-in di valutazione post Th
 
 $l['tpr_set_usergroups_title'] = 'Gruppi utenti';
 
-$l['tpr_set_usergroups_desc'] = 'Gruppi utenti che hanno permesso di valutare il post. (Impostazione predefinita: 2,3,4,6) <br /> 0 indica che tutti i gruppi di utenti possono valutare, tranne gli ospiti.';
+$l['tpr_set_usergroups_desc'] = 'Gruppi utenti che hanno permesso di valutare il post. (Impostazione predefinita: 2,3,4,6) <br /> Gli ospiti non sono ammessi.';
 
 //
 
